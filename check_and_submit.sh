@@ -1,7 +1,7 @@
 #!/bin/bash
 
 valle_root=/courses/CS7980.202510/students/xu.zu/vall-e
-checkpoint_dir=$valle_root/egs/libritts
+checkpoint_dir=$valle_root/egs/libritts/exp/valle
 max_epochs=20  # Maximum number of epochs after which the script should stop
 
 
