@@ -1,6 +1,6 @@
 #!/bin/bash
 
-valle_root=/scratch/zhang.tianyi9/automation/valle
+valle_root=/courses/CS7980.202510/students/xu.zu/vall-e
 checkpoint_dir=$valle_root/egs/libritts
 max_epochs=20  # Maximum number of epochs after which the script should stop
 
@@ -36,10 +36,10 @@ update_job_name_and_checkpoint() {
         exit 0
     fi
 
-    # Update job name, start epoch, and start batch in the train_job.sh script
-    sed -i "s/#SBATCH --job-name=.*/#SBATCH --job-name=$job_name/" $valle_root/../train_job.sh
-    sed -i "s/--start-epoch [0-9]*/--start-epoch $epoch_num/" $valle_root/../train_job.sh
-    sed -i "s/--start-batch [0-9]*/--start-batch $batch_num/" $valle_root/../train_job.sh
+    # Update job name, start epoch, and start batch in the train.sh script
+    sed -i "s/#SBATCH --job-name=.*/#SBATCH --job-name=$job_name/" $valle_root/../scripts/train.sh
+    sed -i "s/--start-epoch [0-9]*/--start-epoch $epoch_num/" $valle_root/../scripts/train.sh
+    sed -i "s/--start-batch [0-9]*/--start-batch $batch_num/" $valle_root/../scripts/train.sh
 }
 
 # Check if there are running or pending jobs
@@ -51,6 +51,5 @@ else
 
     # Submit the next job
     echo "Submitting job $job_name at $(date)"
-    sbatch $valle_root/../train_job.sh
+    sbatch $valle_root/../scripts/train.sh
 fi
-

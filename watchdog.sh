@@ -1,8 +1,8 @@
 #!/bin/bash
 
-remote_user="lewis.jor"
+remote_user="xu.zu"
 remote_host="login.discovery.neu.edu"
-remote_script_path="/work/van-speech-nlp/valle-automation-script/check_and_submit.sh"
+remote_script_path="/courses/CS7980.202510/students/xu.zu/valle-automation-script/check_and_submit.sh"
 sleep_sec=3600
 
 while true; do
