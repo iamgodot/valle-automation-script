@@ -29,6 +29,7 @@ update_job_name_and_checkpoint() {
 
     # Set job name
     job_name="train_${epoch_num}_${batch_num}"
+    echo "Job name: $job_name"
 
     # Check if max epochs have been reached
     if (( epoch_num > max_epochs )); then
@@ -50,6 +51,6 @@ else
     update_job_name_and_checkpoint
 
     # Submit the next job
-    echo "Submitting job $job_name at $(date)"
+    echo "Submitting new job at $(date)"
     sbatch $valle_root/../scripts/train.sh
 fi
